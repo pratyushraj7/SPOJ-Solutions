@@ -1,6 +1,5 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-#include<string.h>
 #define MAX 200
 int arr1[MAX];
 int arr2[MAX];
@@ -14,13 +13,14 @@ void SUBTRACT(int*,int*,int,int);
 void DIVIDE(int*,int);
 int main()
 {
-    int t=10;
+    ios_base::sync_with_stdio(false);
+    cin.tie(false);
+    cout.tie(false);
+    int t=10,i;
     while(t--)
     {
-        char str[MAX];
-        char str1[MAX];
-        cin>>str;
-        cin>>str1;
+        char str[MAX],str1[MAX];
+        cin>>str>>str1;
         s=strlen(str);
         s1=strlen(str1);
         for(int i=0;i<s;i++)
@@ -33,7 +33,7 @@ int main()
         flag=0;
         if(s==s1)
         {
-            for(int i=0;i<s;i++)
+            for(i=0;i<s;i++)
             {
                 if(arr1[i]!=arr2[i])
                 {
@@ -48,14 +48,12 @@ int main()
         cout<<endl;
     }
 }
-
 void ADD(int* arr3,int* arr1,int* arr2,int l1,int l2)
 {
     int t=l1;
     l1--;
     l2--;
-    int sum=0;
-    int carry=0,k=-1;
+    long int sum=0,carry=0,k=-1;
     while((l1>=0)&&(l2>=0))
     {
         sum=arr1[l1]+arr2[l2]+carry;
@@ -73,25 +71,20 @@ void ADD(int* arr3,int* arr1,int* arr2,int l1,int l2)
     }
     while(l1>=0)
         arr3[++k]=arr1[l1--];
-
     int arr4[MAX];
     int m=-1;
     for(int j=k;j>=0;j--)
-    {
         arr4[++m]=arr3[j];
-    }
-    if(flag==0)
+    if(flag)
     {
         for(int i=0;i<t;i++)
             cout<<arr1[i];
         cout<<endl<<"0";
     }
     else
-    {
         DIVIDE(arr4,m);
-    }
+    return;
 }
-
 void DIVIDE(int arr[],int l)
 {
     int k=-1;
@@ -103,18 +96,18 @@ void DIVIDE(int arr[],int l)
         carry=arr[i]%2;
         arr[i+1]=carry*10+arr[i+1];
     }
-    if(arr5[0]==0)
+    if(arr5[0])
     {
-        for(int i=0;i<k;i++)
+        for(i=0;i<k;i++)
             arr5[i]=arr5[i+1];
-        k--;
+        --k;
     }
     for(int i=0;i<=k;i++)
             cout<<arr5[i];
     cout<<endl;
     SUBTRACT(arr5,arr2,k+1,s1);
+    return;
 }
-
 void SUBTRACT(int arr1[],int arr2[],int l1,int l2)
 {
     int result[MAX];
