@@ -1,7 +1,8 @@
-//copyright sumitraj387
+
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long int
+#define int long int
+#define pf push_front
 #define pb push_back//__standard_template_
 #define come_on ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0); //____program booster____
 #define pop pop_back
@@ -12,6 +13,7 @@ using namespace std;
 #define mod 1000000007
 main()
 {
+    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     int n,i,j,k;
     cin>>n>>k;
     int arr[n];
@@ -43,7 +45,5 @@ main()
     }
     cout<<q.size()<<endl;
     for(auto it=q.begin();it!=q.end();it++)
-    {
         cout<<*it<<" ";
-    }
 }
