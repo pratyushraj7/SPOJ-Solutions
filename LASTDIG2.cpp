@@ -1,8 +1,15 @@
-#include<iostream>
+#include<bits/stdc++.h>
+#define int long int
+#define pb push_back
+#define str string
+#define ios ios_base::sync_with_stdio(0);
 using namespace std;
 #define ll long long int
 int main()
 {
+    ios
+    cin.tie(0);
+    cout.tie(0);
     int t;
     cin>>t;
     while(t--)
