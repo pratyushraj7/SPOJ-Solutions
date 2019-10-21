@@ -11,6 +11,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(false);
     cout.tie(false);
+    //heello
     int k,l,m,i;
     cin>>k>>l>>m;
     int arr1[m];
