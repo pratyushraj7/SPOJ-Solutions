@@ -32,6 +32,7 @@ int main()
         int l2=s1;
         flag=0;
         if(s==s1)
+            //I like it
         {
             for(i=0;i<s;i++)
             {
