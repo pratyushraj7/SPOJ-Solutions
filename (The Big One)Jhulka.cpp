@@ -110,6 +110,7 @@ void DIVIDE(int arr[],int l)
 }
 void SUBTRACT(int arr1[],int arr2[],int l1,int l2)
 {
+    //hello
     int result[MAX];
     int k=-1;
     l1--;
